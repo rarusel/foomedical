@@ -22,8 +22,8 @@ export function SignInPage(): JSX.Element {
             <div className="flex flex-col justify-between lg:pr-8">
 */}
               <SignInForm
-                projectId={import.meta.env.VITE_MEDPLUM_PROJECT_ID}
-                googleClientId={import.meta.env.VITE_MEDPLUM_GOOGLE_CLIENT_ID}
+                // projectId={import.meta.env.VITE_MEDPLUM_PROJECT_ID}
+                // googleClientId={import.meta.env.VITE_MEDPLUM_GOOGLE_CLIENT_ID}
                 onSuccess={() => navigate('/')}
               >
                 <h2>Sign in to Foo Medical</h2>
