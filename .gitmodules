@@ -1,0 +1,4 @@
+[submodule "medplum"]
+	path = medplum
+	url = git@github.com:rarusel/medplum.git
+	branch = rosa
