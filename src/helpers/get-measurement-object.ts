@@ -64,6 +64,29 @@ const getMeasurementObject = (
         effectiveDateTime: date,
         status: 'final',
       };
+    case 'Blood Sugar':
+      return {
+        resourceType: 'Observation',
+        subject, 
+        code: {
+          coding: [
+            {
+              code: '2339-0',
+              display: 'Glucose [Mass/volume] in Blood',
+              system: 'http://loinc.org',
+            },
+          ],
+          text: 'Blood sugar',
+        },
+        valueQuantity: {
+          code: 'mg/dL', 
+          system: 'http://unitsofmeasure.org',
+          unit: 'mg/dL', 
+          value: Number(firstValue),
+        },
+        effectiveDateTime: date, 
+        status: 'final',
+      };
     case 'Body Temperature':
       return {
         resourceType: 'Observation',

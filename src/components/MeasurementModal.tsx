@@ -16,6 +16,7 @@ interface MeasurementModalProps {
 interface MeasurementValues {
   diastolicBloodPressure: string;
   systolicBloodPressure: string;
+  bloodSugar: string;
   bodyTemperature: string;
   height: string;
   respiratoryRate: string;
@@ -37,6 +38,7 @@ export default function MeasurementModal({ subject, type, isOpen, onClose }: Mea
   const [modalValues, setModalValues] = useState<MeasurementValues>({
     diastolicBloodPressure: '',
     systolicBloodPressure: '',
+    bloodSugar: '', 
     bodyTemperature: '',
     height: '',
     respiratoryRate: '',
@@ -58,6 +60,8 @@ export default function MeasurementModal({ subject, type, isOpen, onClose }: Mea
   const addResource = (): void => {
     if (type === 'Blood Pressure' && modalValues.diastolicBloodPressure && modalValues.systolicBloodPressure) {
       createMeasurement(modalValues.diastolicBloodPressure, modalValues.systolicBloodPressure);
+    } else if (type === 'Blood Sugar' && modalValues.bloodSugar) {
+      createMeasurement(modalValues.bloodSugar);
     } else if (type === 'Body Temperature' && modalValues.bodyTemperature) {
       createMeasurement(modalValues.bodyTemperature);
     } else if (type === 'Height' && modalValues.height) {
@@ -85,6 +89,13 @@ export default function MeasurementModal({ subject, type, isOpen, onClose }: Mea
       value: modalValues.diastolicBloodPressure,
       name: 'diastolicBloodPressure',
       placeholder: 'mm[Hg]',
+    },
+    {
+      modalType: 'Blood Sugar',
+      inputType: 'number',
+      value: modalValues.bloodSugar, 
+      name: 'bloodSugar',
+      placeholder: 'mg/dL', 
     },
     {
       modalType: 'Body Temperature',

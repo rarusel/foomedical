@@ -61,6 +61,19 @@ export const measurementsMeta: measurementsMetaType = {
       },
     ],
   },
+  'blood-sugar': {
+    id: 'blood-sugar',
+    code: '2339-0', 
+    title: 'Blood Sugar',
+    description: 'The amount of glucose in your blood',
+    chartDatasets: [
+      {
+        label: 'Blood sugar (mg/dL)',
+        backgroundColor, 
+        borderColor,
+      },
+    ],
+  },
   'body-temperature': {
     id: 'body-temperature',
     code: '8310-5',
