@@ -12,11 +12,11 @@ import { Line } from 'react-chartjs-2';
 
 const lineChartOptions = {
   responsive: true,
-  scales: {
-    y: {
-      min: 0,
-    },
-  },
+  // scales: {
+  //   y: {
+  //     min: 0,
+  //   },
+  // },
   plugins: {
     legend: {
       position: 'bottom' as const,
