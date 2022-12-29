@@ -3,7 +3,6 @@ FROM node:16-slim AS build
 WORKDIR /usr/src/foomedical/
 COPY ./ ./
 RUN npm install
-RUN npm run build 
 
 FROM python:3.9-slim-buster
 WORKDIR /usr/src/foomedical/dist/
