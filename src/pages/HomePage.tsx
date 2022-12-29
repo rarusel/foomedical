@@ -14,14 +14,14 @@ import { ReactComponent as DoctorImage } from '../img/homePage/doctor.svg';
 import { Patient, Practitioner } from '@medplum/fhirtypes';
 
 const carouselItems = [
-  {
-    img: <TaskIcon />,
-    title: 'Welcome to Foo Medical',
-    description:
-      'Lorem ipsum at porta donec ultricies ut, arcu morbi amet arcu ornare, curabitur pharetra magna tempus',
-    url: '/get-care',
-    label: 'Learn how we help',
-  },
+  // {
+  //   img: <TaskIcon />,
+  //   title: 'Welcome to Foo Medical',
+  //   description:
+  //     'Lorem ipsum at porta donec ultricies ut, arcu morbi amet arcu ornare, curabitur pharetra magna tempus',
+  //   url: '/get-care',
+  //   label: 'Learn how we help',
+  // },
   {
     img: <TaskIcon />,
     title: 'Verify Email',
@@ -30,14 +30,14 @@ const carouselItems = [
     url: '/account',
     label: 'Send verification email',
   },
-  {
-    img: <TaskIcon />,
-    title: 'Select a Doctor',
-    description:
-      'Lorem ipsum at porta donec ultricies ut, arcu morbi amet arcu ornare, curabitur pharetra magna tempus',
-    url: '/account/provider/choose-a-primary-care-povider',
-    label: 'Choose a Primary Care Provider',
-  },
+  // {
+  //   img: <TaskIcon />,
+  //   title: 'Select a Doctor',
+  //   description:
+  //     'Lorem ipsum at porta donec ultricies ut, arcu morbi amet arcu ornare, curabitur pharetra magna tempus',
+  //   url: '/account/provider/choose-a-primary-care-povider',
+  //   label: 'Choose a Primary Care Provider',
+  // },
   {
     img: <TaskIcon />,
     title: 'Emergency Contact',
@@ -61,27 +61,27 @@ const linkPages = [
     description: '',
     href: '/health-record/medications',
   },
-  {
-    img: <PharmacyImage className="h-auto w-24" />,
-    title: 'Preferred Pharmacy',
-    description: 'Walgreens D2866 1363 Divisadero St  DIVISADERO',
-    href: '#',
-  },
+  // {
+  //   img: <PharmacyImage className="h-auto w-24" />,
+  //   title: 'Preferred Pharmacy',
+  //   description: 'Walgreens D2866 1363 Divisadero St  DIVISADERO',
+  //   href: '#',
+  // },
 ];
 
 const recommendations = [
-  {
-    title: 'Get travel health recommendations',
-    description: 'Find out what vaccines and meds you need for your trip.',
-  },
-  {
-    title: 'Get FSA/HSA reimbursement',
-    description: 'Request a prescription for over-the-counter items.',
-  },
-  {
-    title: 'Request health record',
-    description: 'Get records sent to or from Foo Medical.',
-  },
+  // {
+  //   title: 'Get travel health recommendations',
+  //   description: 'Find out what vaccines and meds you need for your trip.',
+  // },
+  // {
+  //   title: 'Get FSA/HSA reimbursement',
+  //   description: 'Request a prescription for over-the-counter items.',
+  // },
+  // {
+  //   title: 'Request health record',
+  //   description: 'Get records sent to or from Foo Medical.',
+  // },
 ];
 
 export function HomePage(): JSX.Element {
@@ -99,7 +99,7 @@ export function HomePage(): JSX.Element {
           </a>
         </span>
       </div>
-      <div className="bg-hero-background bg-cover bg-left-top">
+      {/* <div className="bg-hero-background bg-cover bg-left-top">
         <section className="mx-auto max-w-7xl px-6 shadow-2xl sm:px-4 md:shadow-none lg:px-8">
           <div className="py-20">
             <div className="flex flex-col items-start md:w-128 lg:w-156">
@@ -116,8 +116,8 @@ export function HomePage(): JSX.Element {
             </div>
           </div>
         </section>
-      </div>
-      <div className="flex w-full justify-center bg-teal-900 py-4 px-2 sm:px-4 lg:px-8">
+      </div> */}
+      {/* <div className="flex w-full justify-center bg-teal-900 py-4 px-2 sm:px-4 lg:px-8">
         <div className="flex flex-col items-center space-y-4 font-medium text-white md:flex-row md:space-y-0 md:space-x-6">
           <GiftIcon className="h-10 w-10 stroke-1 text-white" />
           <p>Put calls to action here</p>
@@ -129,10 +129,26 @@ export function HomePage(): JSX.Element {
             fontUtils="medium"
           />
         </div>
-      </div>
+      </div> */}
       <div className="w-full bg-gray-50">
         <section className="mx-auto max-w-7xl px-2 pb-10 sm:px-4 md:pt-6 md:pb-20 lg:px-8">
+        <div className="mt-10 flex w-full flex-col justify-center space-y-4 text-lg md:flex-row md:items-stretch md:space-y-0 md:space-x-4">
+            {linkPages.map(({ href, img, title, description }) => (
+              <a
+                key={title}
+                href={href}
+                className="flex h-auto w-full flex-col items-center justify-center space-y-4 rounded-md bg-white p-4 text-center shadow"
+              >
+                {img}
+                <div className="flex flex-col justify-center md:h-1/2">
+                  <h2 className="text-lg font-medium text-gray-900">{title}</h2>
+                  {description && <p className="text-base font-medium text-gray-500">{description}</p>}
+                </div>
+              </a>
+            ))}
+          </div>
           <Carousel items={carouselItems} />
+{/* 
           <div className="relative mt-6 flex w-full flex-col items-center justify-center space-y-4 rounded-md bg-white p-4 shadow sm:justify-start md:flex-row md:items-start md:space-x-4 md:space-y-0">
             <TaskIcon className="flex-none" />
             <div className="flex flex-col items-center md:items-start">
@@ -150,6 +166,8 @@ export function HomePage(): JSX.Element {
               </a>
             </div>
           </div>
+*/}
+{/*
           <div className="relative mt-10 flex w-full flex-col items-center justify-center rounded-md bg-white shadow md:flex-row md:justify-start">
             <div className="relative h-56 w-full md:h-60">
               <img
@@ -175,21 +193,8 @@ export function HomePage(): JSX.Element {
               <XMarkIcon className="h-auto w-6 stroke-1 text-white md:text-gray-900" />
             </a>
           </div>
-          <div className="mt-10 flex w-full flex-col justify-center space-y-4 text-lg md:flex-row md:items-stretch md:space-y-0 md:space-x-4">
-            {linkPages.map(({ href, img, title, description }) => (
-              <a
-                key={title}
-                href={href}
-                className="flex h-auto w-full flex-col items-center justify-center space-y-4 rounded-md bg-white p-4 text-center shadow"
-              >
-                {img}
-                <div className="flex flex-col justify-center md:h-1/2">
-                  <h2 className="text-lg font-medium text-gray-900">{title}</h2>
-                  {description && <p className="text-base font-medium text-gray-500">{description}</p>}
-                </div>
-              </a>
-            ))}
-          </div>
+*/}
+{/*
           <div className="mt-10 flex w-full flex-col justify-center space-y-6 md:flex-row md:justify-start md:space-y-0 md:space-x-6">
             <div className="flex w-full flex-col items-center space-y-4 rounded-md bg-white p-4 shadow md:w-2/4 md:flex-row md:items-start md:space-x-4 md:space-y-0">
               <DoctorImage className="h-auto w-24 flex-none rounded-full" />
@@ -220,6 +225,7 @@ export function HomePage(): JSX.Element {
               ))}
             </div>
           </div>
+*/}
         </section>
       </div>
       <Footer />

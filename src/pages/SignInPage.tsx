@@ -8,6 +8,7 @@ export function SignInPage(): JSX.Element {
     <div id="signin" className="flex h-screen flex-col justify-between">
       <main>
         <div className="relative bg-white">
+{/* 
           <div className="lg:absolute lg:inset-0">
             <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
               <img
@@ -19,6 +20,7 @@ export function SignInPage(): JSX.Element {
           </div>
           <div className="relative py-16 px-4 sm:px-6 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8">
             <div className="flex flex-col justify-between lg:pr-8">
+*/}
               <SignInForm
                 projectId={import.meta.env.VITE_MEDPLUM_PROJECT_ID}
                 googleClientId={import.meta.env.VITE_MEDPLUM_GOOGLE_CLIENT_ID}
@@ -26,8 +28,10 @@ export function SignInPage(): JSX.Element {
               >
                 <h2>Sign in to Foo Medical</h2>
               </SignInForm>
+{/*
             </div>
           </div>
+*/}
         </div>
       </main>
       <Footer />
