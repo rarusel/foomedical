@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+
+  foomedical:
+    build: 
+      context: ./
+    container_name: medplum-foomedical
+    environment:
+      - MEDPLUM_SERVER_BASEURL
+      - VITE_MEDPLUM_PROJECT_ID
+      - MEDPLUM_CLIENT_ID
+      - MEDPLUM_CLIENT_SECRET
+    hostname: medplum-foomedical
+    ports: 
+      - 3743:8000
+    restart: unless-stopped

@@ -7,6 +7,8 @@ import { App } from './App';
 import './index.css';
 
 const medplum = new MedplumClient({
+  baseUrl: import.meta.env.MEDPLUM_SERVER_BASEURL,
+  clientId: import.meta.env.MEDPLUM_CLIENT_ID,
   onUnauthenticated: () => (window.location.href = '/'),
 });
 
