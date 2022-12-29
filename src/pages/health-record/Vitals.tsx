@@ -19,7 +19,7 @@ export default function Vitals(): JSX.Element {
       {bundle.entry?.length ? (
         <GridSection array={headers}>
           <ul role="list" className="divide-y divide-gray-200 border-b-2  border-solid border-gray-200">
-            {bundle.entry.map(({ resource }) => (
+            {[...bundle.entry].reverse().map(({ resource }) => (
               <li key={resource?.meta?.lastUpdated}>
                 {resource && resource?.code?.coding && resource?.meta?.lastUpdated && (
                   <a href="#" className="block hover:bg-gray-50">
